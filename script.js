@@ -87,6 +87,7 @@ console.log("Splitted string :",str_split);
 let str_split_join = str_split.join();
 console.log("Joined string :",str_split_join);
 
-
+let str8 = "hello";
+console.log(str8);
 //changed
 
