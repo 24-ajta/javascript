@@ -16,3 +16,4 @@ const arr = [
 console.log("Objects in array :", arr);
 console.log(JSON.stringify(arr));
 console.log(JSON.parse(JSON.stringify(arr)));
+console.log("hello");
