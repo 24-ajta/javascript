@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1>Time</h1>
+   <span id="time"></span>
+  
+    <script>
+        function putZero(sec){
+            return sec<10?"0"+sec:sec;
+        }
+        function show(){
+            var time = document.getElementById("time");
+            var dt = new Date();
+            var hours = dt.getHours();
+            var ampm=hours>12?"pm":"am";
+            time.innerHTML=putZero(hours%12)+":"+putZero(dt.getMinutes())+":"+putZero(dt.getSeconds())+ampm;
+            setTimeout(function(){
+                show();
+            },1000);
+        }
+        show();
+    </script>
+    <!-- <script src="timers.js"></script> -->
+</body>
+</html>
