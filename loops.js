@@ -64,3 +64,59 @@ function neww(a,b,c){
     console.log("c :",c);
 }
 neww(10,20,30);
+
+
+let p = 20;
+let q = p;
+p = 30;
+console.log(q);
+
+let obj={
+    name:"anjitha",
+    age:56
+};
+let obj1=obj;
+obj.name = "nila";
+console.log(obj1);
+
+
+let myobj = {
+    name:"anjitha",
+    value:10
+}
+function callbyreference(objref){
+    objref.value=20;
+}
+callbyreference(myobj);
+console.log(myobj);
+
+let r=20;
+let s=r;
+r=40;
+function callbyvalue(t,u){
+    console.log("r",t,"s",u);
+}
+callbyvalue(r,s);
+
+
+
+
+
+function outerfunction(){
+    let a = 20;
+    function innerfunction(){
+        function innerinnerfunction(){
+            return a;
+        }
+        return innerinnerfunction;
+    }
+    
+    return innerfunction;
+}
+
+
+
+let outerfunctioncall = outerfunction();
+console.log("first call :",outerfunctioncall);
+console.log("Second Call :",outerfunctioncall());
+console.log("Final Call :",outerfunctioncall()());
