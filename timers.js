@@ -1,19 +1,35 @@
-var i =0;
-var x = setInterval(function(){
-    document.write("*");
+// var i =0;
+// var x = setInterval(function(){
+//     document.write("*");
+//     i++;
+//     if(i==10)
+//     {
+//         clearInterval(0)
+//     }
+// },1000)
+
+// function abc(){
+//     setTimeout(()=>{
+//         alert("Welcome");
+//     },3000)
+// }
+// abc();
+// function abd(){
+//     setTimeout(()=>{
+//         alert("*");
+//     },5000)
+// }
+// abd();
+
+
+var i = 0;
+var y = setInterval(function(){
+    document.write(i+"*");
     i++;
-    if(i==10)
-    {
-        clearInterval(0)
-    }
 },1000)
 
-function abc(){
-    setTimeout(()=>{
-        alert("Welcome");
-    },3000)
-}
-abc();
+
+
 
 // var arr = [1,2,3,4];
 // function callback(x){
