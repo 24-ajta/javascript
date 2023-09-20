@@ -51,3 +51,7 @@ function ar({place,code}){
     console.log(place,code);
 }
 ar(aray);
+
+
+
+
