@@ -14,7 +14,13 @@ p
     console.log("Error :",error)
 });
 
-//Promise Chaining
+
+
+
+
+/*--------------------------------------------------------Promise Chaining---------------------------------------------------*/
+
+
 // p
 // .then((message)=>{
 //     console.log("Message :",message);
@@ -32,13 +38,19 @@ p
 // });
 
 
-// Using Callback Function
+
+
+/*--------------------------------------------------------Using Callback Function---------------------------------------------------*/
+
+
+
+
 // let usernotplaying = true;
 // let userleft = true;
 
 
 // function game(succescallback,errorcallback){
-//     if(usernotplaying == true && userleft == true){
+//     if(usernotplaying == true && userleft == true){****
 //         errorcallback({
 //             name : "user1",
 //             message : "User left the game",
@@ -62,7 +74,13 @@ p
 //     console.log("Error Message ",errormessage)
 // });
 
-// Using Promise
+
+
+/*--------------------------------------------------------Using Promise---------------------------------------------------*/
+
+
+
+
 // let usernotplaying = true;
 // let userleft = true;
 
@@ -95,19 +113,61 @@ p
 //         console.log("errormessage ",errormessage)
 //     });
 
-//Promise All
+/*--------------------------------------------------------Promise all & promise race---------------------------------------------------*/
 
 let promise1 = new Promise((resolve,reject)=>{
-    console.log("Successs....");
+    resolve("Success1")
 })
 let promise2 = new Promise((resolve,reject)=>{
-    console.log("Successfull");
+    resolve("Success2")
+})
+let promise3 = new Promise((resolve,reject)=>{
+    resolve("Success3")
 })
 
-Promise.all([promise1,promise2])
+//Promise all
+
+Promise.all([promise1,promise2,promise3])
         .then((successmessage)=>{
             console.log("SuccessMessage ",successmessage)
       })
       .catch((errormessage)=>{
     console.log("errormessage ",errormessage)
     });
+
+
+
+//promise race
+
+Promise.race([promise1,promise2,promise3])
+.then((successmessage)=>{
+    console.log("SuccessMessage ",successmessage)
+})
+.catch((errormessage)=>{
+console.log("errormessage ",errormessage)
+});
+
+
+/*--------------------------------------------------------Promise all map---------------------------------------------------*/
+
+
+let arr = ["true","false","true"]
+
+let result = Promise.all(
+    arr.map((e)=>{
+        return new Promise((resolve,reject)=>{
+            if(e=="true" || e=="false"){
+                resolve("Success");
+            }
+        })
+    })
+);
+console.log("Result :",result);
+
+result
+    .then((message)=>{
+        console.log("Success")
+    })
+    .catch((error)=>{
+        console.log("Error :",error)
+    })
