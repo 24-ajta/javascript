@@ -76,5 +76,24 @@ let str = "hello";
 // const regexp = /\$/i; "\" before $ is used to indicate if $ is present it will be true otherwise false
 
 
-const result = regexp.test(str);
-console.log(result);
+// const result = regexp.test(str);
+// console.log(result);
+//  let regexp =/^\d{2}-\d{2}-\d{4}$/i;
+const regexp = /^([012]?\d|3[01])-([0]\d|[1][012])-(\d{4})/
+
+function onChange(arg){
+    let result = validate(arg.value);
+    let label = document.getElementById("label");
+    label.innerHTML = result;
+}
+
+function validate(value){
+
+    let isValid = regexp.test(value);
+    
+    if(isValid){
+        return "";
+    }else{
+        return "invalid username";
+    }
+}
