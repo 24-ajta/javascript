@@ -33,21 +33,48 @@
 // const result = regexp.test(str4);
 // console.log("Result will be:",result);
 
-let regexp =/^([a-zA-Z ])/;
+// let regexp =/^([a-zA-Z ])/;
 
-function onChange(arg){
-    let result = validate(arg.value);
-    let label = document.getElementById("label");
-    label.innerHTML = result;
-}
+// function onChange(arg){
+//     let result = validate(arg.value);
+//     let label = document.getElementById("label");
+//     label.innerHTML = result;
+// }
 
-function validate(value){
+// function validate(value){
 
-    let isValid = regexp.test(value);
-    console.log("isvalid",isValid);
-    if(isValid){
-        return "";
-    }else{
-        return "invalid username";
-    }
-}
+//     let isValid = regexp.test(value);
+//     console.log("isvalid",isValid);
+//     if(isValid){
+//         return "";
+//     }else{
+//         return "invalid username";
+//     }
+// }
+
+let str = "hello";
+
+// const regexp = /^([kjm])/i;
+// const regexp =/l{2}o$/i;   "{}" o should be there atleast after two "l"
+
+// const regexp =/l{2,4}o$/i;  "{<}" o should be there atleast after 2 to 4 'o'
+
+// const regexp =/Hel{2}o$/i;  string starts with hel and l occurs 2 times before o
+
+// const regexp =/Hel{2}o$/i;  string starts with hel and l occurs 2 times to 4 before o
+
+// const regexp =/Hel{2,}o$/i; "," atleast two l's are needed otherwise it will be false
+
+// \-escape character 
+
+// const regexp =/\d/i; if any digits it will be true
+
+// const regexp =/\D/i; if any non-digits along with digit or non-digits itself  it will be true.if only digits are present it will be false
+
+// const regexp = /\./i; "\" before . is used to indicate if dot is present it will be true otherwise false . itself will print in case there is no dot in that particular group of words
+
+// const regexp = /\$/i; "\" before $ is used to indicate if $ is present it will be true otherwise false
+
+
+const result = regexp.test(str);
+console.log(result);
