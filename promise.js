@@ -1,3 +1,41 @@
+const cart = ["bottle","watch","pen"];
+
+api.createOrder();
+api.processToPayment();
+api.showOrderSummary();
+api.updateWallet();
+
+//Using Callbacks
+api.createOrder(cart,function(){
+    api.processToPayment(function(){
+        api.showOrderSummary(function(){
+            api.updateWallet();
+        });
+    });
+});
+
+
+//Code Reusability,readability ,Inversion of Control,Pyramid of Doom
+
+let flag = true;
+let a =new Promise((resolve,reject)=>{
+    
+    if(flag){
+        resolve("Success");
+    }else{
+        reject("Failed");
+    }
+})
+a
+.then((message)=>{
+    console.log("Message :",message);
+})
+.catch((error)=>{
+    console.log("Error :",error)
+});
+
+
+
 let p =new Promise((resolve,reject)=>{
     let a =2;
     if(a==2){
@@ -50,7 +88,7 @@ p
 
 
 // function game(succescallback,errorcallback){
-//     if(usernotplaying == true && userleft == true){****
+//     if(usernotplaying == true && userleft == true){
 //         errorcallback({
 //             name : "user1",
 //             message : "User left the game",
