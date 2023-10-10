@@ -79,21 +79,75 @@ let str = "hello";
 // const result = regexp.test(str);
 // console.log(result);
 //  let regexp =/^\d{2}-\d{2}-\d{4}$/i;
-const regexp = /^([012]?\d|3[01])-([0]\d|[1][012])-(\d{4})/
+// const regexp = /^([012]?\d|3[01])-([0]\d|[1][012])-(\d{4})/
 
-function onChange(arg){
-    let result = validate(arg.value);
-    let label = document.getElementById("label");
-    label.innerHTML = result;
-}
+// function onChange(arg){
+//     let result = validate(arg.value);
+//     let label = document.getElementById("label");
+//     label.innerHTML = result;
+// }
 
-function validate(value){
+// function validate(value){
 
-    let isValid = regexp.test(value);
+//     let isValid = regexp.test(value);
     
-    if(isValid){
-        return "";
-    }else{
-        return "invalid username";
-    }
-}
+//     if(isValid){
+//         return "";
+//     }else{
+//         return "invalid username";
+//     }
+// }
+
+
+// const result = regexp.test(str);
+// console.log(result);
+//  let regexp =/^\d{2}-\d{2}-\d{4}$/i;
+// const regexp = /^([012]?\d|3[01])-([0]\d|[1][012])-(\d{4})/
+// expression inside "()" refer to capture loop
+// function onChange(arg){
+//     let result = validate(arg.value);
+//     let label = document.getElementById("label");
+//     label.innerHTML = result;
+// }
+
+// function validate(value){
+
+//     // let isValid = regexp.test(value);
+//     let isValid = value.match(regexp);
+//     console.log("isvalid",isValid);
+//     if(isValid == null){
+//         return "Invalid date";
+//     }else{
+//         return "";
+//     }
+// }
+
+// let str = "a-b-c";
+// let str1 = str.replace(/-/g,":");//g globally replaces characters
+// console.log("replaced string",str1);
+
+// let datestr ="11-12-23"
+// console.log("datestr",datestr.replace(/\d{2}$/,"20"));
+// console.log("datestr",datestr.replace(/(\d{2}$)/,"20$1"));
+
+
+//Lookaheads
+// Posotive Lookaheads = (?=)
+// Positive Lookbehind = (?<=)
+// Negative Lookahead = (?!)
+// Negative Lookbehind = (?<!)
+
+
+
+//positive
+
+let datestr = "11-20-23"
+let datestr1 = (datestr.match(/(?<=-)(\d{2}(?=-))/));
+console.log("datestr1",datestr1);
+
+
+//negative
+
+let datestr3 = "(91)1234567890";
+let datestr4 = (datestr3.match(/(?<!\()\d+(?!\))/));
+console.log("datestr4",datestr4)
